@@ -8,3 +8,4 @@ When we’re encrypting a message, **plaintext** refers to the unencrypted messa
 
 <img src="https://github.com/KiraDiShira/SeriousCryptography/blob/master/1ENCRYPTION/Images/Enc_1.PNG" />
 
+For some ciphers, the ciphertext is the same size as the plaintext; for some others, the ciphertext is slightly longer. However, ciphertexts can never be shorter than plaintexts.
