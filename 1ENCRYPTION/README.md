@@ -60,8 +60,6 @@ An eavesdropper would thus learn the XOR difference of P1 and P2, information th
 The intuition behind the one-time pad’s perfect secrecy goes as follows: if K is random, the resulting C looks as random as K to an attacker because the XOR of a random string with any fixed string yields a random string.
 
 # Kerckhoffs’s Principle
-One assumption made in all models is the so-called Kerckhoffs’s principle,
-which states that the security of a cipher should rely only on the secrecy
-of the key and not on the secrecy of the cipher.
+One assumption made in all models is the so-called Kerckhoffs’s principle, which states that the security of a cipher should rely only on the secrecy of the key and not on the secrecy of the cipher.
 
 
