@@ -47,3 +47,18 @@ It guarantees perfect secrecy. The one-time pad takes a plaintext, P, and a rand
 ```
 C = P ⊕ K
 ```
+where C, P, and K are bit strings of the same length and where ⊕ is the bitwise exclusive OR operation (XOR).
+
+The one-time pad’s decryption is identical to encryption; it’s just an XOR: P = C ⊕ K. Indeed, we can verify C ⊕ K = P ⊕ K ⊕ K = P because XORing K with itself gives the all-zero string 000 . . . 000.
+
+The important thing is that a one-time pad can only be used one time: each key K should be used only once. If the same K is used to encrypt P1 and P2 to C1 and C2, then an eavesdropper can compute the following:
+```
+C1 ⊕ C2 = (P1 ⊕ K) ⊕ (P2 ⊕ K) = P1 ⊕ P2 ⊕ K ⊕ K = P1 ⊕ P2
+```
+An eavesdropper would thus learn the XOR difference of P1 and P2, information that should be kept secret. Moreover, if either plaintext message is known, then the other message can be recovered. Of course, the one-time pad is utterly inconvenient to use because it requires a key as long as the plaintext and a new random key for each new message or group of data. To encrypt a one-terabyte hard drive, you’d need another one-terabyte drive to store the key!
+
+The intuition behind the one-time pad’s perfect secrecy goes as follows: if K is random, the resulting C looks as random as K to an attacker because the XOR of a random string with any fixed string yields a random string.
+
+
+
+
