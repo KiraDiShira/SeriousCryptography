@@ -25,3 +25,11 @@ Still, not every permutation is secure. In order to be secure, a cipher’s perm
 - The permutation should look random: There should be no pattern in the ciphertext after performing a permutation, because patterns make a permutation predictable for an attacker, and therefore less secure. For example, the Vigenère cipher’s substitution is pretty predictable: if you determine that A encrypts to F, you could conclude that the shift value is 5 and you would also know that B encrypts to G, that C encrypts to H, and so on. However, with a randomly chosen permutation, knowing that A encrypts to F would only tell you that B does not encrypt to F.
 
 We’ll call a permutation that satisfies these criteria a **secure permutation**. But as you’ll see next, a secure permutation is necessary but not sufficient on its own for building a secure cipher. A cipher will also need a mode of operation to support messages of any length.
+
+## The Mode of Operation
+
+Say we have a secure permutation that transforms A to X, B to M, and N to L, for example. The word BANANA therefore encrypts to MXLXLX, where each occurrence of A is replaced by an X. Using the same permutation for all the letters in the plaintext thus reveals any duplicate letters in the plaintext. By analyzing these duplicates, you might not learn the entire message, but you’ll learn *something* about the message.
+
+The mode of operation (or just mode) of a cipher mitigates the exposure of duplicate letters in the plaintext by using different permutations for duplicate letters.
+
+To build a secure cipher, you must combine a secure permutation with a secure mode. Ideally, this combination prevents attackers from learning anything about a message other than its length.
