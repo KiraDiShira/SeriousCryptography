@@ -22,4 +22,6 @@ Still, not every permutation is secure. In order to be secure, a cipher’s perm
 
 - The permutation should be determined by the key
 - Different keys should result in different permutations.
-- The permutation should look random
+- The permutation should look random: There should be no pattern in the ciphertext after performing a permutation, because patterns make a permutation predictable for an attacker, and therefore less secure. For example, the Vigenère cipher’s substitution is pretty predictable: if you determine that A encrypts to F, you could conclude that the shift value is 5 and you would also know that B encrypts to G, that C encrypts to H, and so on. However, with a randomly chosen permutation, knowing that A encrypts to F would only tell you that B does not encrypt to F.
+
+We’ll call a permutation that satisfies these criteria a **secure permutation**. But as you’ll see next, a secure permutation is necessary but not sufficient on its own for building a secure cipher. A cipher will also need a mode of operation to support messages of any length.
