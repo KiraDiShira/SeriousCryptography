@@ -8,6 +8,12 @@ When we’re encrypting a message, **plaintext** refers to the unencrypted messa
 
 For some ciphers, the ciphertext is the same size as the plaintext; for some others, the ciphertext is slightly longer. However, ciphertexts can never be shorter than plaintexts.
 
+## The Vigenère Cipher
+
+letters are shifted by values defined by a key, a collection of letters that represent numbers based on their position in the alphabet. For example, if the key is DUH, letters in the plaintext are shifted using the values 3, 20, 7 because D is three letters after A, U is 20 letters after A, and H is seven letters after A. The 3, 20, 7 pattern repeats until you’ve encrypted the entire plaintext. For example, the word CRYPTO would encrypt to FLFSNV using DUH as the key: C is shifted three positions to F, R is shifted 20 positions to L, and so on.
+
+# How Ciphers Work
+
 We can try to abstract out the workings of a cipher, first by identifying its two main components: a **permutation** and a **mode of operation**. A permutation is a function that transforms an item (in cryptography, a letter or a group of bits) such that each item has a unique inverse (for example, the Caesar cipher’s three-letter shift). A mode of operation is an algorithm that uses a permutation to process messages of arbitrary size.
 
 ## The Permutation
