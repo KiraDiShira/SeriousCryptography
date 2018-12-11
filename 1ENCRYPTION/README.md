@@ -39,3 +39,11 @@ Say we have a secure permutation that transforms A to X, B to M, and N to L, for
 The mode of operation (or just mode) of a cipher mitigates the exposure of duplicate letters in the plaintext by using different permutations for duplicate letters.
 
 To build a secure cipher, you must combine a secure permutation with a secure mode. Ideally, this combination prevents attackers from learning anything about a message other than its length.
+
+## Perfect Encryption: The One-Time Pad
+
+It guarantees perfect secrecy. The one-time pad takes a plaintext, P, and a random key, K, that’s the same length as P and produces a ciphertext C, defined as
+
+```
+C = P ⊕ K
+```
